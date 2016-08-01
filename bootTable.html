@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Bootstrap 实例 - 基本的表格</title>
+   <link href="css/bootstrap.min.css" rel="stylesheet">
+   <link href="bootstrapTable/bootstrap-table.min.css" rel="stylesheet">
+   <script src="js/jquery-1.12.2.min.js"></script>
+   <script src="js/bootstrap.min.js"></script>
+   <script src="bootstrapTable/bootstrap-table.min.js"></script>
+   <script src="bootstrapTable/bootstrap-table.zh-CN.min.js"></script>
+</head>
+<body>
+<table data-toggle="table">
+    <thead>
+        <tr>
+            <th>Item ID</th>
+            <th>Item Name</th>
+            <th>Item Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>Item 1</td>
+            <td>$1</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Item 2</td>
+            <td>$2</td>
+        </tr>
+    </tbody>
+</table>
+<table data-toggle="table" data-url="bootstrapTable/data1.json">
+    <thead>
+        <tr>
+            <th data-field="id">Item ID</th>
+            <th data-field="name">Item Name</th>
+            <th data-field="price">Item Price</th>
+        </tr>
+    </thead>
+</table>
+<table data-toggle="table" data-url="bootstrapTable/data.json">
+    <thead>
+        <tr>
+            <th data-field="id.id2">Item ID</th>
+            <th data-field="name.name2">Item Name</th>
+            <th data-field="price.price2.price3">Item Price</th>
+        </tr>
+    </thead>
+</table>
+<table id="table"></table>
+<script>
+$('#table').bootstrapTable({
+    columns: [{
+        field: 'id',
+        title: 'Item ID'
+    }, {
+        field: 'name',
+        title: 'Item Name'
+    }, {
+        field: 'price',
+        title: 'Item Price'
+    }],
+    data: [{
+        id: 1,
+        name: 'Item 1',
+        price: '$1'
+    }, {
+        id: 2,
+        name: 'Item 2',
+        price: '$2'
+    }]
+});
+</script>
+</body>
+</html>
